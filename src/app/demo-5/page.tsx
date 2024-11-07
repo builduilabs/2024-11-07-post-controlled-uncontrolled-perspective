@@ -17,7 +17,7 @@ export default function Page() {
           </div>
 
           <div className="mt-4">
-            <Text>App&apos;s state:</Text>
+            <Text>App state:</Text>
           </div>
         </div>
       </div>

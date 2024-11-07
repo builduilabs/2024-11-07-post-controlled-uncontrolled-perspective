@@ -22,7 +22,7 @@ export default function Page() {
           </div>
 
           <div className="mt-4 space-y-4">
-            <Text>App&apos;s state: {count}</Text>
+            <Text>App state: {count}</Text>
 
             <Button onClick={() => setCount(0)} outline>
               Reset
