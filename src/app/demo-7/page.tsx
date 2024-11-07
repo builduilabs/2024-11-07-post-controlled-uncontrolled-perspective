@@ -21,7 +21,7 @@ export default function Page() {
           </div>
 
           <div className="mt-4">
-            <Text>App&apos;s state:</Text>
+            <Text>App state:</Text>
           </div>
         </div>
 
@@ -35,7 +35,7 @@ export default function Page() {
 
             <div className="mt-4 space-y-4">
               <Text className="truncate">
-                App&apos;s state: <span className="tabular-nums">{count}</span>
+                App state: <span className="tabular-nums">{count}</span>
               </Text>
               <Button onClick={() => setCount(0)} outline>
                 Reset count
