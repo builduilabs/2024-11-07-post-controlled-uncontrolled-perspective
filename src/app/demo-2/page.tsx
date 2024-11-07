@@ -1,45 +1,33 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Counter from './counter';
-import { Text } from '../components/text';
-import { Heading } from '../components/heading';
-import { Button } from '../components/button';
+import { useState } from "react";
+import { Text } from "../components/text";
+import { Input } from "../components/input";
+import { Heading } from "../components/heading";
+import { Button } from "../components/button";
 
 export default function Page() {
-  let [count, setCount] = useState(0);
+  let [search, setSearch] = useState("");
 
   return (
     <>
       <span data-hide-urlbar />
-      <div className="grow flex">
-        <div className="w-1/2 border-r pr-6">
-          <Heading className="text-center">Uncontrolled</Heading>
 
-          <div className="mt-10 flex justify-center">
-            <Counter />
-          </div>
-
-          <div className="mt-4">
-            <Text>App&apos;s state:</Text>
-          </div>
-        </div>
-        <div className="w-1/2 pl-6">
+      <div className="mt-1 flex grow justify-center">
+        <div className="w-1/2">
           <Heading className="text-center">Controlled</Heading>
 
-          <div className="mt-10">
-            <div className="mt-10 flex justify-center">
-              <Counter value={count} onChange={setCount} />
-            </div>
+          <div className="mt-10 space-y-4">
+            <Input
+              name="controlled"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <Text className="truncate">React state: {search}</Text>
 
-            <div className="mt-4 space-y-4">
-              <Text className="truncate">
-                App&apos;s state: <span className="tabular-nums">{count}</span>
-              </Text>
-              <Button onClick={() => setCount(0)} outline>
-                Reset count
-              </Button>
-            </div>
+            <Button onClick={() => setSearch("")} outline>
+              Clear search
+            </Button>
           </div>
         </div>
       </div>
